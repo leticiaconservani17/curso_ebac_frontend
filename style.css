@@ -46,3 +46,84 @@ nav ul li a {
 nav ul li a:hover {
     text-decoration: underline;
 }
+
+main {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section {
+    background-color: #f9f9f9;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    font-size: 24px;
+    margin: 20px;
+    margin-bottom: 0;
+}
+
+section .articles{
+    display: flex;
+}
+
+.articles article img {
+    height: 330px;
+    width: 550px;
+}
+
+.articles article {
+    margin-top: 20px;
+    width: 30%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+article header {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+article time {
+    font-size: 14px;
+    color: #666;
+}
+
+article h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+article p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+article a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.news {
+    width: auto;
+    margin: 0;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.articles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.container {
+    margin: auto;
+}
