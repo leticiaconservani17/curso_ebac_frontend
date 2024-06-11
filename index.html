@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO</title>
+</head>
+<body>
+    <header>
+        <h1>    
+            TO DO LIST
+        </h1>
+        <button type="button" id="newTaskButton">Nova Tarefa +</button>
+    </header>
+    <form id="taskForm" style="display:none;">
+        <label for="tasks"><h2>Inserir nova tarefa:</h2></label>
+        <input type="text" placeholder="Tarefa a fazer" id="tasks">
+        <button type="submit">Adicionar</button>
+        <button type="button" id="cancelButton">Cancelar</button>
+    </form>     
+    <ul class="list">
+    </ul>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
