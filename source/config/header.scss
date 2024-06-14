@@ -1,0 +1,29 @@
+@use 'variables';
+
+header {
+    background-color: $header-background-color;
+    position: sticky;
+    top: 0;
+    left: 0;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: $container-padding 0;
+    }
+
+    .menu {
+        display: flex;
+
+        li {
+        font-weight: bold;
+        margin-left: 24px;
+
+        a {
+            color: $menu-color;
+            text-decoration: none;
+        }
+        }
+    }
+}

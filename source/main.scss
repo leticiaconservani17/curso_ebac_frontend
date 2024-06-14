@@ -1,0 +1,22 @@
+@use 'config/variables';
+@use 'config/reset';
+@use 'config/header';
+@use 'config/products';
+
+body {
+    background-color: $background-color;
+}
+
+.container {
+    max-width: $container-max-width;
+    width: 100%;
+    margin: 0 auto;
+
+    @media screen and (max-width: 1023px) {
+    max-width: 80%;
+    }
+}
+
+section {
+    padding: 56px 0;
+}
