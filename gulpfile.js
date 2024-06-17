@@ -1,36 +1,35 @@
-const gulp = require('gulp')
-const sass = require("gulp-sass")(require('sass'))
-const sourcemaps = require('gulp-sourcemaps')
-const uglify = require('gulp-uglify')
-const obfuscate = require('gulp-obfuscate')
-const imagemin = require('gulp-imagemin')
+const gulp = require('gulp');
+const sass = require('gulp-sass')(require('sass'));
+const sourcemaps = require('gulp-sourcemaps');
+const uglify = require('gulp-uglify');
+const obfuscate = require('gulp-obfuscate');
+const imagemin = require('gulp-imagemin');
 
-function ComplileImage() {
+function CompileImage() {
     return gulp.src('./source/images/*')
-    .pipe(imagemin())
-    .pipe(gulp.dest('./build/images'))
+        .pipe(imagemin())
+        .pipe(gulp.dest('./build/images'));
 }
 
-function CompileJS(){
+function CompileJS() {
     return gulp.src('./source/scripts/*.js')
-    .pipe(uglify())
-    .pipe(obfuscate())
-    .pipe(gulp.dest('./build/scripts'))
+        .pipe(uglify())
+        .pipe(obfuscate())
+        .pipe(gulp.dest('./build/scripts'));
 }
 
-function CompileSass(){
+function CompileSass() {
     return gulp.src('./source/styles/main.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({
             outputStyle: 'compressed'
-        }))
+        }).on('error', sass.logError))
         .pipe(sourcemaps.write('./maps'))
-        .pipe(gulp.dest('./build/styles'))
+        .pipe(gulp.dest('./build/styles'));
 }
 
-
 exports.default = function() {
-    gulp.watch('./source/styles/*.scss', {ignoreInitial: false}, gulp.series(CompileSass))
-    gulp.watch('./source/scripts/*.js', {ignoreInitial: false}, gulp.series(CompileJS))
-    gulp.watch('./source/images/*', {ignoreInitial: false}, gulp.series(ComplileImage))
+    gulp.watch('./source/styles/*.scss', { ignoreInitial: false }, gulp.series(CompileSass));
+    gulp.watch('./source/scripts/*.js', { ignoreInitial: false }, gulp.series(CompileJS));
+    gulp.watch('./source/images/*', { ignoreInitial: false }, gulp.series(CompileImage));
 };
