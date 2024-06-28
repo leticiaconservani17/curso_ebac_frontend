@@ -1,0 +1,30 @@
+body {
+  background-color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+h1 {
+  text-align: center;
+  font-family: sans-serif;
+}
+#testButton {
+  background-color: white;
+  border: none;
+  width: 150px;
+  padding: 20px;
+  cursor: pointer;
+}
+main {
+  display: flex;
+  justify-content: center;
+  background-color: aquamarine;
+  padding: 32px;
+  width: 500px;
+}
+main .container {
+  text-align: center;
+  font-family: sans-serif;
+}

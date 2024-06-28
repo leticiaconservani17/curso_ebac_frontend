@@ -4,7 +4,7 @@ module.exports = function(grunt) {
         less:{
             development:{
                 files: {
-                    'dev/styles/main.css' : 'src/styles/main.less'
+                    'build/styles/main.css' : 'src/styles/main.less'
                 }
             },
             production: {
@@ -12,7 +12,7 @@ module.exports = function(grunt) {
                     compress: true,
                 },
                 files: {
-                    'dist/styles/main.min.css': 'src/styles/main.less'
+                    'build/styles/min/main.min.css': 'src/styles/main.less'
                 }
             }
         },
@@ -21,38 +21,30 @@ module.exports = function(grunt) {
                 files: ['src/styles/**/*.less'],
                 tasks: ['less:development']
             },
-        },
-        
-        sass: {
-            dist: {
-                options: {
-                    style: 'compressed'
-                },
-                files: {
-                    'main2.css' : 'main.scss'
-                }
+            js: {
+                files: ['src/scripts/**/*js'],
+                tasks: ['uglify']
             }
         },
+
         concurrent: {
-            target: ['less', 'sass']
+            target: ['less', 'uglify']
         },
         clean: ['prebuild'],
         uglify: {
             target: {
                 files: {
-                    'dist/scripts/main.min.js': 'src/scripts/main.js'
+                    'build/min/scripts/main.min.js': 'src/scripts/main.js'
                 }
             }
         }
     })
 
     grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks('grunt-contrib-sass');
-    grunt.loadNpmTasks('grunt-contrib-concurrent');
+    grunt.loadNpmTasks('grunt-concurrent');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
     grunt.registerTask('default', ['concurrent', 'watch']);
-    grunt.registerTask('build', ['less:production', 'uglify'])
 }

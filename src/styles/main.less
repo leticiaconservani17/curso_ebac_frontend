@@ -1,0 +1,36 @@
+@import 'variables.less';
+
+body{
+    background-color: @bodyBackdround;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    height: 100vh;           
+    margin: 0;               
+}
+
+h1 {
+    text-align: center;
+    font-family: @primaryFont;
+}
+
+#testButton {
+    background-color: @buttonColor;
+    border: none;
+    width: 150px;
+    padding: 20px;
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    background-color: @mainBackdround;
+    padding: 32px;
+    width: 500px;
+
+    .container {
+        text-align: center;
+        font-family: @primaryFont;
+    }
+}
